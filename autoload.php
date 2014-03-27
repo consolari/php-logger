@@ -7,7 +7,7 @@ function nameSpaceLoader($cls)
      
     $reverseCls = str_replace('\\', DIRECTORY_SEPARATOR, $cls);
 
-    $file = '/var/www/consolari/www.consolari.io/vendor/consolari/src/'.$reverseCls.'.php';
+    $file = __DIR__.'/src/'.$reverseCls.'.php';
 
     if (is_readable($file)) {
         include_once $file;
