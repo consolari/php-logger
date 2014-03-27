@@ -3,4 +3,6 @@ php:
   - "5.5"
   - "5.4"
   - "5.3"
+install:
+   - composer require psr/log:1.0
 script: "phpunit --bootstrap tests/bootstrap.php ."
