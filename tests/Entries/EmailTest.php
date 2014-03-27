@@ -30,6 +30,7 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $entry->setBodyHtml('body html');
         $entry->setBodyText('body text');
         $entry->setGroupName('Email');
+        $entry->setLabel('my label');
         
         $value = $entry->format();
         
@@ -41,6 +42,7 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('body html', $value['value']['body_html']);
         $this->assertEquals('body text', $value['value']['body_text']);
         $this->assertEquals('Email', $value['group']);
+        $this->assertEquals('my label', $value['label']);
         
         $this->assertEquals(Consolari\Entries\EntryType::EMAIL, $value['type']);
         

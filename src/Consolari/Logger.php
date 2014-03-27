@@ -357,13 +357,17 @@ class Logger implements LoggerInterface
         return $this->buildHeader();
     }
     
-    public function send()
+    public function send($transport = null)
     {
         $report = $this->buildHeader();
         $report['entries'] = $this->entries;
 
+        if (!empty($transport)) {
+            $this->setTransport($transport);
+        }
+        
         if (empty($this->transport)) {
-            $this->transport = new Transport\BrowserEcho();
+            $this->setTransport(new Transport\Curl());
         }
         
         $this->transport->setData($report);

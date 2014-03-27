@@ -26,7 +26,7 @@ class String extends AbstractEntry
             'time'=>$this->getTime(),                
             'memory'=>$this->getMemory(),
             'group'=>$this->groupName,    
-            'labeel'=>$this->label,    
+            'label'=>$this->label,    
         );
         
         return $entry;

@@ -17,6 +17,7 @@ class ArrayEntryTest extends PHPUnit_Framework_TestCase
         ));
 
         $entry->setGroupName('Array');
+        $entry->setLabel('my label');
         
         $data = $entry->format();
         
@@ -28,5 +29,6 @@ class ArrayEntryTest extends PHPUnit_Framework_TestCase
         
         $this->assertEquals(Consolari\Entries\EntryType::ARRAYENTRY, $data['type']);
         $this->assertEquals('Array', $data['group']);
+        $this->assertEquals('my label', $data['label']);
     }
 }
