@@ -14,6 +14,11 @@ class Query extends AbstractEntry
         $this->entry['value']['sql'] = $str;    
     }
     
+    public function setRows($rows = array())
+    {
+        $this->entry['value']['rows'] = $rows;    
+    }
+    
     public function format()
     {
         $this->entry['type'] = EntryType::SQL;
