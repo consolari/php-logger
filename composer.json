@@ -1,7 +1,7 @@
 {
     "name": "consolari/php-logger",
     "description": "Logger helper for Consolari",
-    "keywords": ["log", "logging", "psr-3"],
+    "keywords": ["log", "logging", "psr-3","consolari","debug"],
     "homepage": "http://www.consolari.io",
     "type": "library",
     "license": "MIT",
