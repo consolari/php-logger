@@ -2,14 +2,14 @@
     "name": "consolari/php-logger",
     "description": "Logger helper for Consolari",
     "keywords": ["log", "logging", "psr-3","consolari","debug"],
-    "homepage": "http://www.consolari.io",
+    "homepage": "http://www.consolari.io/",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Peter Sorensen",
+            "name": "Peter Sørensen",
             "email": "peter@consolari.io",
-            "homepage": "http://www.consolari.io"
+            "homepage": "http://www.consolari.io/"
         }
     ],
     "require": {
