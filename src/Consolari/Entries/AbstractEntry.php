@@ -48,14 +48,16 @@ abstract class AbstractEntry implements EntryInterface
         );
 
         if ($this->context != null) {
-            $entry['context_file'] = $this->context->getFile();
-            $entry['context_line'] = $this->context->getLine();
-            $entry['context_class'] = $this->context->getClass();
-            $entry['context_method'] = $this->context->getMethod();
-            $entry['context_code'] = $this->context->getCode();
-            $entry['context_language'] = $this->context->getLanguage();
+            /*
+             * Set context data
+             */
+            $entry['context']['file'] = $this->context->getFile();
+            $entry['context']['line'] = $this->context->getLine();
+            $entry['context']['class'] = $this->context->getClass();
+            $entry['context']['method'] = $this->context->getMethod();
+            $entry['context']['code'] = $this->context->getCode();
+            $entry['context']['language'] = $this->context->getLanguage();
         }
-
 
         return $entry;
     }
