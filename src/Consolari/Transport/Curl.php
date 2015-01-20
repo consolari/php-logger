@@ -3,7 +3,7 @@ namespace Consolari\Transport;
 
 class Curl extends AbstractTransport
 {
-    private $url = 'http://api.consolari.io/v1/report/';
+    private $url = 'https://api.consolari.io/v1/report/';
     
     public function write()
     {
