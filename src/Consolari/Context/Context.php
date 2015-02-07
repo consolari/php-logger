@@ -120,4 +120,16 @@ class Context
     {
         return $this->method;
     }
+
+    public function toArray()
+    {
+        return array(
+            'file' => $this->getFile(),
+            'line' => $this->getLine(),
+            'class' => $this->getClass(),
+            'method' => $this->getMethod(),
+            'code' => $this->getCode(),
+            'language' => $this->getLanguage(),
+        );
+    }
 }

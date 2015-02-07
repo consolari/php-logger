@@ -28,6 +28,60 @@ class Logger implements LoggerInterface
 
     private $transport;
 
+    private $message = '';
+
+    private $stacktrace = '';
+
+    private $context;
+
+    /**
+     * @param mixed $stacktrace
+     */
+    public function setStacktrace($stacktrace)
+    {
+        $this->stacktrace = $stacktrace;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStacktrace()
+    {
+        return $this->stacktrace;
+    }
+
+    /**
+     * @param \Consolari\Context $context
+     */
+    public function setContext(\Consolari\Context $context)
+    {
+        $this->context = $context;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContext()
+    {
+        return $this->context->toArray()    ;
+    }
+
+    /**
+     * @param mixed $message
+     */
+    public function setMessage($message)
+    {
+        $this->message = $message;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
     public function getEntries()
     {
         return $this->entries;
@@ -349,8 +403,21 @@ class Logger implements LoggerInterface
         $header['source'] = $this->getSource();
         $header['url'] = $this->getUrl();
         $header['level'] = $this->getLevel();
+        $header['message'] = $this->getMessage();
+        $header['stacktrace'] = $this->getStacktrace();
+        $header['context'] = $this->getContext();
 
         return $header;
+    }
+
+    public function exception(\Exception $exception)
+    {
+        $this->setMessage($exception->getMessage());
+        $this->setStacktrace($exception->getTraceAsString());
+
+        $context = new \Consolari\Context();
+
+        $this->setContext($context);
     }
 
     public function getHeader()
