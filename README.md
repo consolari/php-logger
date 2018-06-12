@@ -7,3 +7,5 @@ Install through composer
 =======================
 
 [![Build Status](https://travis-ci.org/consolari/php-logger.png?branch=master)](http://travis-ci.org/consolari/php-logger)
+
+Developed by (https://indexed.dk)
